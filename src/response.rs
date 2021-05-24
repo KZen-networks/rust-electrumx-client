@@ -8,7 +8,7 @@ pub struct GetBlockHeadersResponse {
 #[derive(Debug, Deserialize)]
 pub struct GetBalanceResponse {
     pub confirmed:   u64,
-    pub unconfirmed: u64,
+    pub unconfirmed: i128,
 }
 
 #[derive(Debug, Deserialize)]
