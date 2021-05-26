@@ -1,4 +1,5 @@
 use response::{GetBlockHeadersResponse, GetBalanceResponse, GetHistoryResponse, GetListUnspentResponse};
+use rust_decimal::Decimal;
 
 #[derive(Debug, Deserialize)]
 pub struct GetBlockHeaderRawResponse {
@@ -18,7 +19,7 @@ pub struct GetBlockHeadersRawResponse {
 pub struct EstimateFeeRawResponse {
     id:      usize,
     jsonrpc: String,
-    pub result:  f64,
+    pub result:  Decimal,
 }
 
 #[derive(Debug, Deserialize)]

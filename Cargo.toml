@@ -1,6 +1,6 @@
 [package]
 name = "electrumx_client"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["evgeniy.scherbina <evgeniy.scherbina@bitfury.com>"]
 
 [dependencies]
@@ -11,3 +11,4 @@ bitcoin = "0.26.0"
 hex = "0.3.2"
 sha2 = "0.8.0"
 clap = "2.32.0"
+rust_decimal = "1"

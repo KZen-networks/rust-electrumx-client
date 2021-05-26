@@ -5,6 +5,7 @@ use std::{
     net::{TcpStream, ToSocketAddrs},
     error::Error,
 };
+use rust_decimal::Decimal;
 
 use interface::Electrumx;
 use raw_response::{GetBlockHeaderRawResponse, GetBlockHeadersRawResponse, EstimateFeeRawResponse,
@@ -40,7 +41,7 @@ impl<A: ToSocketAddrs + Clone> Electrumx for ElectrumxClient<A> {
         Ok(resp.result)
     }
 
-    fn estimate_fee(&mut self, number: usize) -> Result<f64, Box<Error>> {
+    fn estimate_fee(&mut self, number: usize) -> Result<Decimal, Box<Error>> {
         let req = Request::new(0, "blockchain.estimatefee", vec![Param::Usize(number)]);
         self.call(req)?;
         let raw = self.recv()?;

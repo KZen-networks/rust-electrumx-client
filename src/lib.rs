@@ -5,6 +5,7 @@ extern crate serde_json;
 extern crate bitcoin;
 extern crate hex;
 extern crate sha2;
+extern crate rust_decimal;
 
 pub mod electrumx_client;
 pub mod interface;

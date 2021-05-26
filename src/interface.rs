@@ -1,4 +1,6 @@
 use std::error::Error;
+use rust_decimal::Decimal;
+
 use response::{GetBlockHeadersResponse, GetBalanceResponse, GetHistoryResponse, GetListUnspentResponse};
 
 pub trait Electrumx {
@@ -22,7 +24,7 @@ pub trait Electrumx {
     // within a certain number of blocks.
     // * result - the estimated transaction fee in coin units per kilobyte, as a floating point number.
     // If the daemon does not have enough information to make an estimate, the integer -1 is returned.
-    fn estimate_fee(&mut self, number: usize) -> Result<f64, Box<Error>>;
+    fn estimate_fee(&mut self, number: usize) -> Result<Decimal, Box<Error>>;
 
     // Return the minimum fee a low-priority transaction must pay in order to be accepted
     // to the daemon’s memory pool.
